@@ -1,5 +1,6 @@
 *
 {
+    box-sizing: border-box;
     margin: 0%;
     padding: 0%;
 }
@@ -10,7 +11,7 @@ html
 }
 
 body {
-    background-image: linear-gradient(to right, #ff0844 0%, #ffb199 100%);
+    background-image: linear-gradient(-225deg, #22E1FF 0%, #1D8FE1 48%, #625EB1 100%);
     font-family: 'Yusei Magic', sans-serif;
     margin: 0;
 }
@@ -21,6 +22,12 @@ body {
     height: 80px;
     justify-content: space-between;
     width: 100;    
+}
+
+.header__title
+{
+    color: white;
+    font-size: 4rem;
 }
 
 .header__img {
@@ -88,16 +95,22 @@ body {
     font-size: 1.6rem;
 }
 
-main
+.main
 {
     height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .main__title
 {
     color: white;
     font-size: 3rem;
+    margin: 15px;
 }
+
 
 .input
 {
@@ -117,4 +130,115 @@ main
 ::placeholder
 {
     color: white;
+}
+
+.categories__title
+{
+    color: white;
+    font-size: 1.6rem;
+    position: absolute;
+    padding-left: 30px;
+    width: 100%;
+}
+
+.carrousel
+{
+    width: 100%;
+    overflow: scroll;
+    padding: 30px;
+    position: relative;
+    margin-bottom: 100px;
+}
+.carrousel__container
+{
+    white-space: nowrap;
+    margin: 70px 0px;
+    padding-bottom: 10px;
+}
+.carrousel-item
+{
+    background-color: coral;
+    border-radius: 25px;
+    cursor: pointer;
+    height: 250px;
+    width: 200px;
+    overflow: hidden;
+    margin-right: 10px;
+    display: inline-block;
+    transition: 450ms all;
+    transform-origin: center;
+    position: relative;
+}
+.carrousel-item:hover ~.carrousel-item
+{
+    transform: translate3d(100px ,0,0);
+}
+.carrousel__container:hover .carrousel-item
+{
+    opacity: 0.3;
+}
+.carrousel__container:hover .carrousel-item:hover
+{
+    transform: scale(1.5);
+    opacity: 1;
+}
+.carrousel-item__img
+{
+    height: 250px;
+    width: 200px;
+    object-fit: cover;
+}
+.carrousel-item__details
+{
+    background: linear-gradient(to top,rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    font-size: 1rem;
+    opacity: 0;
+    transition: 450ms opacity;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.carrousel-item__details:hover
+{
+    opacity: 1;
+}
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+::-webkit-scrollbar {
+    width: 8px; 
+    height: 8px;   
+    background:rgba(255,255,255,.4);
+    border-radius: 4px;
+}
+::-webkit-scrollbar:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, .1);
+}
+::-webkit-scrollbar:hover:active {
+    background: #999;
+}
+
+.footer
+{
+    display: flex;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer a{
+    color: white;
+    cursor: pointer;
+    font-size: 1.4rem;
+    padding-left: 30px;
+    text-decoration: none;
+}
+.footer a:hover{
+    text-decoration: underline;
 }
